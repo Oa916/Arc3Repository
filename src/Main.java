@@ -1,9 +1,10 @@
 import java.util.ArrayList;
-static void main(String[] args) {
+
+public static void main(String[] args) {
 
 ArrayList<Combatant> roster = new ArrayList<>();
-roster.add(new BossNob("Guz", 2, 2,"Kombi-weapon","Ork", "Power Klaw"));
-roster.add(new Boy("Grunt", 2,2, "Slugga", "Ork"));
+roster.add(new BossNob("Guz", 2, 2,"Kombi-weapon", 4,"Ork", "Power Klaw" , 9));
+roster.add(new Boy("Grunt", 2,2, "Slugga", 4,"Ork"));
 
 
 for (Combatant c : roster) {

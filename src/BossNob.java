@@ -2,11 +2,19 @@
 
 public class BossNob extends Combatant {
     private String CloseQuartersWeapon;
-    public BossNob(String Name, int Toughness,int Wounds,String Weapon,String Species,String CloseQuartersWeapon) {
-        super(Name,Toughness,Wounds,Weapon,Species);
+    private int CloseQuartersWeaponStrength;
+    public BossNob(String Name, int Toughness,int Wounds,String Weapon,int WeaponStrength ,String Species,String CloseQuartersWeapon, int CloseQuartersWeaponStrength) {
+        super(Name,Toughness,Wounds,Weapon,WeaponStrength,Species);
         this.CloseQuartersWeapon = CloseQuartersWeapon;
+        this.CloseQuartersWeaponStrength = CloseQuartersWeaponStrength;
 
     }
     public String getCloseQuartersWeapon() {return CloseQuartersWeapon;}
+    public int getCloseQuartersWeaponStrength() {return CloseQuartersWeaponStrength;}
 
+
+    @Override
+    public void Attack(Combatant Target) {
+
+    }
 }
