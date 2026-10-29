@@ -1,6 +1,6 @@
 
 
-public class BossNob extends Combatant {
+public class BossNob extends Combatant implements Combatant.MeleeAttack {
     private String CloseQuartersWeapon;
     private int CloseQuartersWeaponStrength;
     public BossNob(String Name, int Toughness,int Wounds,String Weapon,int WeaponStrength ,String Species,String CloseQuartersWeapon, int CloseQuartersWeaponStrength) {
@@ -14,7 +14,14 @@ public class BossNob extends Combatant {
 
 
     @Override
-    public void Attack(Combatant Target) {
+    public void UseSpecialMelee() {
 
+    }
+
+    @Override
+    public void Attack(Combatant Target) {
+        System.out.println(this.getName() + " blasts their " + this.getWeapon() + " at " + Target.getName());
+        int BaseDamage = (this.getWeaponStrength() - Target.getToughness());
+        System.out.print(" for a total of " + BaseDamage + " damage!!!");
     }
 }

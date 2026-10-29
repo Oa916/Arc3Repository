@@ -5,10 +5,9 @@ public class Boy extends Combatant {
 
     @Override
     public void Attack(Combatant Target) {
-        int BaseDamage = (this.getWeaponStrength() - )
-
-
-
+        System.out.println(this.getName() + " blasts their " + this.getWeapon() + " at " + Target.getName());
+        int BaseDamage = (this.getWeaponStrength() - Target.getToughness());
+        System.out.print(" for a total of " + BaseDamage + " damage!!!");
     }
 
 

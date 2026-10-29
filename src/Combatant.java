@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public abstract class Combatant {
     private String Species;
     private String Name;
@@ -28,6 +26,9 @@ public abstract class Combatant {
 
     public abstract void Attack(Combatant Target);
 
+    public interface MeleeAttack {
+        void UseSpecialMelee();
+    }
 
     public String toString() {
         return "Name: " + Name + " Toughness: " + Toughness + " Wounds: " + Wounds + " Weapon: " + Weapon +  " Weapon Strength: " + WeaponStrength + " Species: " + Species;
