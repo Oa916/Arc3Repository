@@ -15,4 +15,6 @@ for (Combatant c : roster) {
 }
 
 
+roster.get(1).Attack(roster.get(2));
+
 }

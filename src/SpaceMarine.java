@@ -8,6 +8,12 @@ public class SpaceMarine extends Combatant {
     public void Attack(Combatant Target) {
         System.out.println(this.getName() + " fires off their " + this.getWeapon() + " at " + Target.getName());
         int BaseDamage = (this.getWeaponStrength() - Target.getToughness());
-        System.out.print(" for a total of " + BaseDamage + " damage!!!");
+        if (BaseDamage == 0 || BaseDamage < 0) {
+            System.out.print(" But their armor was too great and deflected the blow! ");
+
+        }
+        else {
+            System.out.print(" for a total of " + BaseDamage + " damage!!!");
+        }
     }
 }
