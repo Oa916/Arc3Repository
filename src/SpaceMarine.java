@@ -5,9 +5,9 @@ public class SpaceMarine extends Combatant {
 
     }
 
-    @Override
     public void Attack(Combatant Target) {
-
-
+        System.out.println(this.getName() + " fires off their " + this.getWeapon() + " at " + Target.getName());
+        int BaseDamage = (this.getWeaponStrength() - Target.getToughness());
+        System.out.print(" for a total of " + BaseDamage + " damage!!!");
     }
 }
