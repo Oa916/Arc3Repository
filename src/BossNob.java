@@ -14,8 +14,10 @@ public class BossNob extends Combatant implements Combatant.MeleeAttack {
 
 
     @Override
-    public void UseSpecialMelee() {
-
+    public void UseSpecialMelee(Combatant Target) {
+        System.out.println(this.getName() + " Crushes " + Target.getName() + " wither their " + this.getCloseQuartersWeapon());
+        int MeleeBaseDamage = (this.CloseQuartersWeaponStrength - Target.getToughness());
+        System.out.print(" for a total of " + MeleeBaseDamage + " damage!!!");
     }
 
     @Override

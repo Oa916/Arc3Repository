@@ -12,8 +12,10 @@ public class SpaceMarineLieutenant extends Combatant implements Combatant.MeleeA
     public int getCloseQuartersWeaponStrength() {return CloseQuartersWeaponStrength;}
 
     @Override
-    public void UseSpecialMelee() {
-
+    public void UseSpecialMelee(Combatant Target) {
+        System.out.println(this.getName() + " connects a devastating to " + Target.getName() + " wither their " + this.getCloseQuartersWeapon());
+        int MeleeBaseDamage = (this.CloseQuartersWeaponStrength - Target.getToughness());
+        System.out.print(" for a total of " + MeleeBaseDamage + " damage!!!");
     }
 
     @Override

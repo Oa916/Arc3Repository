@@ -27,7 +27,7 @@ public abstract class Combatant {
     public abstract void Attack(Combatant Target);
 
     public interface MeleeAttack {
-        void UseSpecialMelee();
+        void UseSpecialMelee(Combatant Target);
     }
 
     public String toString() {
