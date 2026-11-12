@@ -1,6 +1,6 @@
 public class CadianShockTrooper extends Combatant {
-    public CadianShockTrooper(String Name, int Toughness, int Wounds, String Weapon, int WeaponStrength, String Species) {
-        super(Name, Toughness, Wounds, Weapon, WeaponStrength, Species);
+    public CadianShockTrooper(String type,String Name, int Toughness, int Wounds, String Weapon, int WeaponStrength, String Species) {
+        super(type,Name, Toughness, Wounds, Weapon, WeaponStrength, Species);
     }
 
     @Override
@@ -14,4 +14,7 @@ public class CadianShockTrooper extends Combatant {
             System.out.print(" for a total of " + BaseDamage + " damage!!!");
         }
     }
+
+
+
 }

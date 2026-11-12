@@ -1,6 +1,6 @@
 public class SpaceMarine extends Combatant {
-    public SpaceMarine(String Name, int Toughness, int Wounds, String Weapon, int WeaponStrength, String Species) {
-        super(Name, Toughness, Wounds, Weapon, WeaponStrength, Species);
+    public SpaceMarine(String type,String Name, int Toughness, int Wounds, String Weapon, int WeaponStrength, String Species) {
+        super(type, Name, Toughness, Wounds, Weapon, WeaponStrength, Species);
 
 
     }

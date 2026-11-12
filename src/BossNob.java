@@ -12,6 +12,10 @@ public class BossNob extends Combatant implements Combatant.MeleeAttack {
     public String getCloseQuartersWeapon() {return CloseQuartersWeapon;}
     public int getCloseQuartersWeaponStrength() {return CloseQuartersWeaponStrength;}
 
+    @Override
+    public String toCsv() {
+        return super.toCsv() + "," + getCloseQuartersWeapon() + "," + getCloseQuartersWeaponStrength();
+    }
 
     @Override
     public void UseSpecialMelee(Combatant Target) {
