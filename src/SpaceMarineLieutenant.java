@@ -2,8 +2,8 @@ public class SpaceMarineLieutenant extends Combatant implements Combatant.MeleeA
 
     private String CloseQuartersWeapon;
     private int CloseQuartersWeaponStrength;
-    public SpaceMarineLieutenant(String Name, int Toughness,int Wounds,String Weapon,int WeaponStrength ,String Species,String CloseQuartersWeapon, int CloseQuartersWeaponStrength) {
-        super(Name,Toughness,Wounds,Weapon,WeaponStrength,Species);
+    public SpaceMarineLieutenant(String type,String Name, int Toughness,int Wounds,String Weapon,int WeaponStrength ,String Species,String CloseQuartersWeapon, int CloseQuartersWeaponStrength) {
+        super(type,Name,Toughness,Wounds,Weapon,WeaponStrength,Species);
         this.CloseQuartersWeapon = CloseQuartersWeapon;
         this.CloseQuartersWeaponStrength = CloseQuartersWeaponStrength;
 
