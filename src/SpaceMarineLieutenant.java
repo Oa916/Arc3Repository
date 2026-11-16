@@ -13,7 +13,7 @@ public class SpaceMarineLieutenant extends Combatant implements Combatant.MeleeA
 
     @Override
     public String toCsv() {
-        return super.toCsv() + "," + getCloseQuartersWeapon() + "," + getCloseQuartersWeapon();
+        return super.toCsv() + "," + getCloseQuartersWeapon() + "," + getCloseQuartersWeaponStrength();
     }
 
     @Override
