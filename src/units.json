@@ -1,0 +1,66 @@
+{
+  "orks": [
+    {
+      "type": "Boss Nob",
+      "name": "Guz",
+      "toughness": 2,
+      "wounds": 2,
+      "weapon": "Kombi-weapon",
+      "weaponStrength": 4,
+      "species": "Ork",
+      "closeQuartersWeapon": "Power Klaw",
+      "closeQuartersWeaponStrength": 9
+    },
+    {
+      "type": "Boy",
+      "name": "Grunt",
+      "toughness": 2,
+      "wounds": 2,
+      "weapon": "Slugga",
+      "weaponStrength": 4,
+      "species": "Ork"
+    }
+  ],
+  "spaceMarines": [
+    {
+      "type": "Space Marine Lieutenant",
+      "name": "Lieutenant John",
+      "toughness": 4,
+      "wounds": 4,
+      "weapon": "Heavy bolt pistol",
+      "weaponStrength": 4,
+      "species": "Human-SpaceMarine",
+      "closeQuartersWeapon": "Power fist",
+      "closeQuartersWeaponStrength": 8
+    },
+    {
+      "type": "Space Marine",
+      "name": "Marine David",
+      "toughness": 4,
+      "wounds": 2,
+      "weapon": "Bolt Rifle",
+      "weaponStrength": 5,
+      "species": "Human-SpaceMarine"
+    }
+  ],
+  "guards": [
+    {
+      "type": "Cadian Shock Trooper",
+      "name": "Trooper Daniel",
+      "toughness": 3,
+      "wounds": 1,
+      "weapon": "Flamer",
+      "weaponStrength": 4,
+      "species": "Human-Guardsman"
+    },
+    {
+      "type": "LemanRussBattleTank",
+      "name": "Leman Russ Battle Tank",
+      "toughness": 8,
+      "wounds": 13,
+      "weapon": "Leman Russ Battle Cannon",
+      "weaponStrength": 10,
+      "species": "Astra Militarum"
+    }
+  ]
+}
