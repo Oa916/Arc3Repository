@@ -2,10 +2,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import com.google.gson.*;
-
+import java.io.FileReader;
+import java.lang.reflect.Type;
+import com.google.gson.reflect.TypeToken;
 
 public class Main {
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+    Gson gson = new GsonBuilder()
+            .registerTypeAdapter(Combatant.class, new CombatantDeserializer())
+            .setPrettyPrinting()
+            .create();
 
 
     private final ArrayList<Combatant> orks = new ArrayList<>();
@@ -20,45 +26,37 @@ public class Main {
     private final JTextArea rosterDisplay =
             new JTextArea(7, 28);
 
-    public Main() {
-        createRosterSublists();
-    }
-
     private void createRosterSublists() {
 
-        // Orks
-        orks.add(new BossNob(
-                "Boss Nob", "Guz", 2, 2,
-                "Kombi-weapon", 4, "Ork",
-                "Power Klaw", 9
-        ));
+        try {
+            JsonObject data = JsonParser.parseReader(
+                    new FileReader("units.json")
+            ).getAsJsonObject();
 
-        orks.add(new Boy(
-                "Boy", "Grunt", 2, 2,
-                "Slugga", 4, "Ork"
-        ));
+            Type combatantListType =
+                    new TypeToken<ArrayList<Combatant>>() {}.getType();
 
-        // Space Marines
-        spaceMarines.add(new SpaceMarineLieutenant(
-                "Space Marine Lieutenant", "Lieutenant John",
-                4, 4, "Heavy bolt pistol", 4,
-                "Human-SpaceMarine", "Power fist", 8
-        ));
+            // Orks
+            orks.addAll(gson.fromJson(
+                    data.getAsJsonArray("orks"),
+                    combatantListType
+            ));
 
-        spaceMarines.add(new SpaceMarine(
-                "Space Marine", "Marine David",
-                4, 2, "Bolt Rifle", 5,  "Human-SpaceMarine"
-        ));
+            // Space Marines
+            spaceMarines.addAll(gson.fromJson(
+                    data.getAsJsonArray("spaceMarines"),
+                    combatantListType
+            ));
 
-        // Imperial Guard
-        guards.add(new CadianShockTrooper(
-                "Cadian Shock Trooper", "Trooper Daniel",
-                3, 1, "Flamer", 4,
-                "Human-Guardsman"
-        ));
-        guards.add(new LemanRussBattleTank("LemanRussBattleTank", "Leman Russ Battle Tank",
-                8,13,"Leman Russ Battle Cannon", 10, "Astra Militarum"));
+            // Imperial Guard
+            guards.addAll(gson.fromJson(
+                    data.getAsJsonArray("guards"),
+                    combatantListType
+            ));
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void showGui() {
